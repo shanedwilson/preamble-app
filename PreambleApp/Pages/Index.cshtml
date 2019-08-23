@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@{ string preambleText = "We the People of the United States, in Order to form a more perfect Union, " +
+     "establish Justice, insure domestic Tranquility, provide for the common defence, " +
+     "promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, " +
+     "do ordain and establish this Constitution for the United States of America.";
+
+    var pre1 = new PreambleApp.Preamble();
+
+    var tWords = pre1.makeTWords(preambleText);
+
+    var eWords = pre1.makeEWords(preambleText);
+
+    var tEWords = pre1.makeTEWords(preambleText);
+
+
+    }
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Bitch</h1>
+    <p>In this paragraph: @preambleText</p>
+
+    <section>
+        <p>There are @tWords words that begin with a 't.'</p>
+        <p>There are @eWords words that end with an 'e.'</p>
+        <p>There are @tEWords words that start with a 't' and end with an 'e.'</p>
+    </section>
+</div>
